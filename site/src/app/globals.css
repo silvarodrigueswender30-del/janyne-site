@@ -466,16 +466,177 @@ svg {
 .button-secondary-dark { color: var(--interactive-secondary-dark-text); }
 .hero-eyebrow { color: var(--text-inverse); }
 .eyebrow-accent { display: inline-block; width: var(--space-5); height: 2px; margin-right: var(--space-2); vertical-align: middle; background: var(--accent-primary); }
-.hero-section { margin-top: -64px; padding-top: calc(64px + var(--space-7)); padding-bottom: var(--space-8); }
+
+/* ─── Hero: Warm Atmospheric Minimalism ───────────────────────────────────────
+   Layer order (bottom → top):
+   1. Obsidian base (via .canvas-dark background)
+   2. Ambient radial gradients — Rose Clay haze behind Jenny, Earthen Umber at
+      lower-right, deep vignette at left edge to preserve H1 contrast
+   3. Grain pseudo-element (::after) — SVG noise, ~0.025 opacity
+   4. Section content
+   All decorative layers are pointer-events: none.
+   ─────────────────────────────────────────────────────────────────────────── */
+.hero-section {
+  position: relative;
+  margin-top: -64px;
+  padding-top: calc(64px + var(--space-7));
+  padding-bottom: var(--space-8);
+  /* Ambient gradients over Obsidian base.
+     Coordinates are desktop (Jenny at right half, col 7–12).
+     Mobile overrides below shift the haze to center. */
+  background:
+    /* Rose Clay warm haze — large, centred behind Jenny's torso/shoulder */
+    radial-gradient(
+      72% 78% at 76% 46%,
+      rgba(181, 142, 132, 0.13) 0%,
+      rgba(181, 142, 132, 0.05) 38%,
+      transparent 70%
+    ),
+    /* Earthen Umber / taupe density — lower-right, near the armchair base */
+    radial-gradient(
+      50% 52% at 91% 84%,
+      rgba(141, 111, 102, 0.10) 0%,
+      transparent 72%
+    ),
+    /* Very gentle warm lift at upper-right corner — breaks the flat ceiling */
+    radial-gradient(
+      38% 32% at 96% 8%,
+      rgba(141, 111, 102, 0.06) 0%,
+      transparent 68%
+    ),
+    /* Left-edge depth — keeps H1 area deep and textually safe */
+    radial-gradient(
+      40% 60% at 0% 50%,
+      rgba(25, 22, 21, 0.32) 0%,
+      transparent 70%
+    ),
+    /* Obsidian base (same as --background-dark, explicit so gradients stack) */
+    var(--background-dark);
+}
+
+/* Grain layer — SVG turbulence filter encoded as data URI.
+   Uses a single <feTurbulence> node at 0.65 baseFrequency,
+   monochrome, stitched. Negligible file weight, no network request. */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 320px 320px;
+  background-repeat: repeat;
+  opacity: 0.025;
+  mix-blend-mode: soft-light;
+}
+
+/* Ensure hero content stacks above grain layer */
+.hero-section > * { position: relative; z-index: 1; }
+
 .hero-grid { display: grid; gap: var(--space-7); align-items: center; }
 .hero-copy { min-width: 0; }
 .hero-visual { position: relative; min-width: 0; }
+.hero-image-stage { display: flex; width: 100%; aspect-ratio: 4 / 5; align-items: flex-end; justify-content: center; overflow: hidden; }
+
+/* Drop-shadow: integrates the cutout into the canvas atmosphere.
+   Two layers: a short contact shadow + a long ambient scatter.
+   Values are deliberately low — the goal is belonging, not "pasted" look. */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter:
+    drop-shadow(0 16px 24px rgba(20, 17, 16, 0.14))
+    drop-shadow(0 40px 64px rgba(20, 17, 16, 0.07));
+}
+
 .hero-profile, .hero-approach { position: static; margin-top: var(--space-4); }
 .identity-strip { min-height: 88px; padding-block: var(--space-5); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
 .identity-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
 .identity-grid li { padding-block: var(--space-2); }
 .about-grid { display: grid; gap: var(--space-7); align-items: center; }
 .about-cards { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+
+/* ─── About: Warm Atmospheric Light Canvas ─────────────────────────────────
+   Layer order (bottom → top):
+   1. Alabaster base
+   2. Rose Clay warm haze — left-centre, behind Jenny/armchair (col 1–5)
+   3. Muted Linen density — near armchair base, lower-left
+   4. Alabaster bright wash — upper area, lifts the ceiling
+   5. Very subtle warm density — lower-right, prevents flat uniformity
+   6. Grain pseudo-element (::after) — SVG noise, ~0.018 opacity
+   All decorative layers are pointer-events: none.
+   ─────────────────────────────────────────────────────────────────────────── */
+.about-section {
+  position: relative;
+  background:
+    /* Rose Clay warm haze — centred behind Jenny (left column, col 1–5) */
+    radial-gradient(
+      62% 72% at 24% 54%,
+      rgba(181, 142, 132, 0.09) 0%,
+      rgba(181, 142, 132, 0.03) 40%,
+      transparent 72%
+    ),
+    /* Muted Linen density — near armchair base, lower-left */
+    radial-gradient(
+      52% 48% at 18% 88%,
+      rgba(216, 210, 200, 0.32) 0%,
+      transparent 68%
+    ),
+    /* Alabaster bright wash — upper-right, keeps text area open and light */
+    radial-gradient(
+      48% 42% at 72% 18%,
+      rgba(244, 239, 232, 0.60) 0%,
+      transparent 72%
+    ),
+    /* Subtle warm density — lower-right, breaks horizontal uniformity */
+    radial-gradient(
+      38% 34% at 86% 78%,
+      rgba(216, 210, 200, 0.18) 0%,
+      transparent 68%
+    ),
+    /* Alabaster base */
+    var(--background-primary);
+}
+
+/* Grain — quieter than Hero since the canvas is light.
+   opacity 0.018 keeps it as material texture without looking dirty. */
+.about-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 320px 320px;
+  background-repeat: repeat;
+  opacity: 0.018;
+  mix-blend-mode: multiply;
+}
+
+/* Content above grain */
+.about-section > * { position: relative; z-index: 1; }
+
+/* About image: transparent stage — canvas shows through alpha areas.
+   overflow: visible allows the scaled cutout to extend beyond the stage
+   box without creating page overflow (the stage itself stays within grid). */
+.about-image-stage {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Mobile/default: natural size, no transform */
+.about-image-cutout {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
 .relevance-grid, .psychotherapy-grid, .approach-grid { display: grid; gap: var(--space-7); align-items: center; }
 .relevance-cards { display: grid; gap: var(--space-5); }
 .relevance-card { display: flex; min-height: 100%; flex-direction: column; }
@@ -558,11 +719,21 @@ svg {
   .footer-brand { grid-column: 1 / span 5; }
   .footer-navigation { grid-column: 7 / span 2; }
   .footer-contact { grid-column: 10 / -1; }
+  /* About: ~12% scale boost at laptop — keeps Jenny present without crowding text */
+  .about-image-cutout {
+    transform: scale(1.12) translateX(-4%);
+    transform-origin: center bottom;
+  }
 }
 @media (min-width: 1280px) {
   :root { --header-height: 72px; }
   .site-header { height: 72px; }
   .hero-section { min-height: 720px; margin-top: -72px; padding-top: calc(72px + var(--space-8)); }
+  /* About: ~20% scale boost at desktop + slight leftward shift */
+  .about-image-cutout {
+    transform: scale(1.20) translateX(-5%);
+    transform-origin: center bottom;
+  }
 }
 @media (min-width: 1440px) { .hero-section { min-height: 760px; } .final-cta-content { grid-column: 3 / 11; } }
 @media (max-width: 479px) { .hero-copy .inline-flex, .psychotherapy-copy .inline-flex, .final-cta-action { width: 100%; } }
@@ -574,7 +745,9 @@ svg {
 
 .canvas-dark {
   --focus-ring: var(--focus-ring-dark);
-  background: var(--background-dark);
+  /* Use background-color (not background shorthand) so that sections with
+     a multi-layer gradient background (e.g. .hero-section) are not overridden. */
+  background-color: var(--background-dark);
   color: var(--text-inverse);
 }
 
@@ -632,5 +805,58 @@ svg {
 
   .section-block {
     padding-block: var(--space-7);
+  }
+}
+
+/* --- Hero ambient gradient: responsive repositioning ---
+   On stacked layouts (<1024px) Jenny is centred.
+   --- */
+@media (max-width: 1023px) {
+  .hero-section {
+    background:
+      radial-gradient(
+        68% 60% at 50% 72%,
+        rgba(181, 142, 132, 0.11) 0%,
+        rgba(181, 142, 132, 0.04) 38%,
+        transparent 70%
+      ),
+      radial-gradient(
+        48% 40% at 50% 96%,
+        rgba(141, 111, 102, 0.09) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        36% 28% at 50% 4%,
+        rgba(141, 111, 102, 0.05) 0%,
+        transparent 68%
+      ),
+      var(--background-dark);
+  }
+}
+
+/* --- About ambient gradient: responsive repositioning ---
+   On stacked layouts (<1024px) Jenny is centred below the text.
+   The Rose Clay haze shifts to center-bottom.
+   --- */
+@media (max-width: 1023px) {
+  .about-section {
+    background:
+      radial-gradient(
+        60% 55% at 50% 78%,
+        rgba(181, 142, 132, 0.08) 0%,
+        rgba(181, 142, 132, 0.03) 38%,
+        transparent 70%
+      ),
+      radial-gradient(
+        50% 42% at 50% 96%,
+        rgba(216, 210, 200, 0.28) 0%,
+        transparent 68%
+      ),
+      radial-gradient(
+        44% 38% at 50% 6%,
+        rgba(244, 239, 232, 0.55) 0%,
+        transparent 70%
+      ),
+      var(--background-primary);
   }
 }

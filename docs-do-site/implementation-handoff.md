@@ -249,3 +249,28 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - Git integration: repositorio GitHub conectado; pushes em `main` alimentam Production.
 - Arquivos privados excluidos: `arquivos/`, `Mokap/`, `.env*`, `.vercel/`, `node_modules/`, `.next/`, builds, logs e backup local do Git interno.
 - O commit inicial automatico do Create Next App foi preservado no historico do repositorio raiz.
+
+## Hero Photography Integration
+- Master utilizado: `imagens/hero1.png` (PNG RGBA com transparencia real), preservado sem alteracoes.
+- Dimensoes originais: 1122 x 1402 px.
+- Derivado web: `site/public/images/hero/janyne-hero.avif`, 1122 x 1402 px, 131.695 bytes, qualidade 80, com canal alpha preservado (0-255).
+- Componente alterado: `site/src/components/sections/Hero.tsx`; o `ImageFrame` foi substituido apenas na Hero por `next/image`, com dimensoes intrinsecas, priority, `contain` e alinhamento inferior.
+- CSS alterado: `site/src/app/globals.css`; o palco da imagem permanece transparente, sem background, borda, radius ou sombra.
+- Estrutura 5+1+6, copy, CTAs, breakpoints, Navbar e cards flutuantes foram preservados. Os slots About e Psicoterapia nao foram alterados.
+- QA tecnico concluido em 1440, 1280, 1024, 768, 480 e 390 px: zero overflow horizontal; imagem completa e proporcional; wrapper transparente, sem borda, radius ou sombra; cards e Navbar preservados; ordem mobile correta; placeholder ausente; priority presente; alt exato; apenas o AVIF da Hero carregado; console sem erros ou warnings.
+- `pnpm typecheck`, `pnpm lint` e `pnpm build` passaram. Nenhuma screenshot foi gerada.
+`n## Hero Atmospheric Visual Prototype`n- Gradients aplicados: 4 radial-gradients (Rose Clay haze + Earthen Umber density + warm corner lift + left-edge depth) sobre base Obsidian, sem novos HEX fora da paleta oficial.`n- Textura aplicada: SVG fractalNoise data URI (320x320, stitched), pseudo-elemento ::after, opacity 0.025, mix-blend-mode soft-light. Peso zero, sem asset externo.`n- Drop-shadow aplicado: duas camadas (contact + ambient scatter), drop-shadow(0 16px 24px rgba(20,17,16,0.14)) + drop-shadow(0 40px 64px rgba(20,17,16,0.07)).`n- Arquivo alterado: site/src/app/globals.css apenas. Hero.tsx nao alterado.`n- canvas-dark alterado de background para background-color para nao sobrescrever gradients do hero.`n- Responsividade: gradients reposicionados para centro em max-width 1023px (layout empilhado mobile/tablet).`n- QA estrutural: typecheck passou, lint passou. Nenhuma screenshot gerada.`n- Resultado: pronto para avaliacao visual manual em http://127.0.0.1:3000`n- Status: PROTOTIPO - nao propagado para outras secoes. Aguardando aprovacao do usuario.
+`n## About Photography Integration (JP-ABOUT-02)`n- Master: imagens/sessao2.png ó PNG RGBA, 1086 x 1448 px, alpha 0-255, 1.323.959 bytes. Preservado sem alteracoes.`n- Derivado web: site/public/images/about/janyne-about.avif ó 1086 x 1448 px, RGBA, 152.331 bytes, qualidade 82.`n- Componente alterado: site/src/components/sections/About.tsx; ImageFrame placeholder removido; next/image integrado com width/height intrinsecos, contain, bottom align, sizes responsivo.`n- CSS adicionado: site/src/app/globals.css ó .about-image-stage (aspect-ratio 3/4, transparente) e .about-image-cutout (contain + bottom).`n- Alt: 'Janyne Porfirio em pe ao lado de uma poltrona'.`n- Canvas Alabaster aparece atraves das areas transparentes. Sem background, border, radius ou shadow no wrapper.`n- Responsividade: mobile ordem DOM preservada (about-copy antes de about-image); 768-1023px ambos full-width; >=1024px about-image col 1-5 / about-copy col 7-12.`n- QA: typecheck passou, lint passou. Nenhuma screenshot gerada.`n- Status: PRONTO PARA AVALIACAO VISUAL MANUAL em http://127.0.0.1:3000`n- Proxima etapa: refinamento atmosfÈrico do About (aguardando aprovacao visual do usuario).
+
+## About Atmospheric Refinement (JP-ABOUT-02)
+- Escala ajustada: scale(1.20) translateX(-5%) em >=1280px; scale(1.12) translateX(-4%) em 1024-1279px; sem transform em <1024px.
+- Posicionamento: transform-origin center bottom preserva alinhamento de p√©s e poltrona.
+- Gradients aplicados: 4 radial-gradients (Rose Clay haze + Muted Linen density + Alabaster bright wash + warm density) sobre base Alabaster.
+- Grain aplicado: SVG fractalNoise data URI, opacity 0.018, mix-blend-mode multiply (mais quieto que o Hero).
+- Drop-shadow: n√£o aplicado nesta etapa (aguardando avalia√ß√£o visual).
+- about-section class adicionada ao <section>; bg-background-primary removida (substitu√≠da pelo gradiente expl√≠cito com Alabaster base).
+- Gradientes responsivos: @media (max-width: 1023px) reposiciona halo para centro-baixo (acompanha Jenny empilhada).
+- Arquivos alterados: site/src/components/sections/About.tsx, site/src/app/globals.css.
+- QA: typecheck passou, lint passou, build passou.
+- Status: PRONTO PARA AVALIACAO VISUAL MANUAL em http://127.0.0.1:3000
+- Proxima etapa: refinamento adicional baseado em feedback visual do usuario.
