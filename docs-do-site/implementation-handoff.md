@@ -233,3 +233,19 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - Browser validado em 1440 e 390px: sem overflow horizontal e sem erros ou warnings no console.
 - `href`, `target="_blank"`, `rel`, `aria-label` e anchor text foram confirmados no DOM.
 - Nenhuma screenshot foi gerada.
+
+## Initial GitHub / Vercel Deployment
+- Data do deploy: 23/09/2026.
+- Repository: `https://github.com/silvarodrigueswender30-del/janyne-site.git`.
+- Branch: `main`.
+- Commit estrutural: `e404d73b2f15bf2dc6a871f82abe8f74d46730ba` (`feat: complete Janyne website home structure`).
+- GitHub push: concluido com sucesso, sem force push; `main` acompanha `origin/main`.
+- Vercel team: `silvarodrigueswender30-dels-projects`.
+- Vercel project: `janyne-site` (`prj_XRt3X7hSHmEXxlez2LbS6XxZZ5up`).
+- Production URL: `https://janyne-site.vercel.app`.
+- Framework Preset: Next.js.
+- Root Directory: `site`.
+- Build status: Ready; build de producao concluida com sucesso pela Vercel.
+- Git integration: repositorio GitHub conectado; pushes em `main` alimentam Production.
+- Arquivos privados excluidos: `arquivos/`, `Mokap/`, `.env*`, `.vercel/`, `node_modules/`, `.next/`, builds, logs e backup local do Git interno.
+- O commit inicial automatico do Create Next App foi preservado no historico do repositorio raiz.
