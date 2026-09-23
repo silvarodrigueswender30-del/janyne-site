@@ -1,0 +1,194 @@
+[
+  {
+    "width": 1440,
+    "metrics": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": false,
+      "h1": {
+        "x": 120,
+        "y": 281.34375,
+        "width": 472,
+        "height": 275.546875,
+        "top": 281.34375,
+        "right": 592,
+        "bottom": 556.890625,
+        "left": 120
+      },
+      "heroImage": {
+        "x": 744,
+        "y": 136,
+        "width": 576,
+        "height": 720,
+        "top": 136,
+        "right": 1320,
+        "bottom": 856,
+        "left": 744
+      },
+      "headerHeight": 72,
+      "menuVisible": false
+    },
+    "menuTest": "desktop",
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "metrics": {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "h1": {
+        "x": 70,
+        "y": 265.5625,
+        "width": 447,
+        "height": 269.609375,
+        "top": 265.5625,
+        "right": 517,
+        "bottom": 535.171875,
+        "left": 70
+      },
+      "heroImage": {
+        "x": 664,
+        "y": 136,
+        "width": 546,
+        "height": 682.5,
+        "top": 136,
+        "right": 1210,
+        "bottom": 818.5,
+        "left": 664
+      },
+      "headerHeight": 72,
+      "menuVisible": false
+    },
+    "menuTest": "desktop",
+    "errors": []
+  },
+  {
+    "width": 1024,
+    "metrics": {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "overflow": false,
+      "h1": {
+        "x": 32,
+        "y": 173.359375,
+        "width": 372,
+        "height": 297.46875,
+        "top": 173.359375,
+        "right": 404,
+        "bottom": 470.828125,
+        "left": 32
+      },
+      "heroImage": {
+        "x": 536,
+        "y": 128,
+        "width": 456,
+        "height": 570,
+        "top": 128,
+        "right": 992,
+        "bottom": 698,
+        "left": 536
+      },
+      "headerHeight": 64,
+      "menuVisible": false
+    },
+    "menuTest": "desktop",
+    "errors": []
+  },
+  {
+    "width": 768,
+    "metrics": {
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "h1": {
+        "x": 32,
+        "y": 138.390625,
+        "width": 452.578125,
+        "height": 226.171875,
+        "top": 138.390625,
+        "right": 484.578125,
+        "bottom": 364.5625,
+        "left": 32
+      },
+      "heroImage": {
+        "x": 32,
+        "y": 592.703125,
+        "width": 704,
+        "height": 1073.609375,
+        "top": 592.703125,
+        "right": 736,
+        "bottom": 1666.3125,
+        "left": 32
+      },
+      "headerHeight": 64,
+      "menuVisible": false
+    },
+    "menuTest": "open-close-escape-passed",
+    "errors": []
+  },
+  {
+    "width": 480,
+    "metrics": {
+      "width": 480,
+      "scrollWidth": 480,
+      "overflow": false,
+      "h1": {
+        "x": 24,
+        "y": 138.390625,
+        "width": 403.796875,
+        "height": 201.796875,
+        "top": 138.390625,
+        "right": 427.796875,
+        "bottom": 340.1875,
+        "left": 24
+      },
+      "heroImage": {
+        "x": 24,
+        "y": 596.375,
+        "width": 432,
+        "height": 733.609375,
+        "top": 596.375,
+        "right": 456,
+        "bottom": 1329.984375,
+        "left": 24
+      },
+      "headerHeight": 64,
+      "menuVisible": false
+    },
+    "menuTest": "open-close-escape-passed",
+    "errors": []
+  },
+  {
+    "width": 390,
+    "metrics": {
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "h1": {
+        "x": 20,
+        "y": 138.390625,
+        "width": 350,
+        "height": 194.140625,
+        "top": 138.390625,
+        "right": 370,
+        "bottom": 332.53125,
+        "left": 20
+      },
+      "heroImage": {
+        "x": 20,
+        "y": 588.71875,
+        "width": 350,
+        "height": 631.109375,
+        "top": 588.71875,
+        "right": 370,
+        "bottom": 1219.828125,
+        "left": 20
+      },
+      "headerHeight": 64,
+      "menuVisible": false
+    },
+    "menuTest": "open-close-escape-passed",
+    "errors": []
+  }
+]
