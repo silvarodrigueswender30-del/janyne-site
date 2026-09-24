@@ -1,6 +1,32 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export function TherapyRelevance() {
- return <section className="section-block bg-background-secondary" aria-labelledby="relevance-heading"><Container><div className="relevance-grid relevance-grid--pending"><div className="relevance-intro"><Eyebrow>{"Quando a psicoterapia pode fazer sentido"}</Eyebrow><h2 id="relevance-heading" className="type-heading-xl mt-3 max-w-[22ch] text-text-primary">Há momentos em que compreender o que estamos vivendo pode abrir novas formas de seguir.</h2></div></div></Container></section>;
+  return (
+    <section className="section-block bg-background-secondary" aria-labelledby="relevance-heading">
+      <Container>
+        <div className="relevance-grid relevance-grid--photo">
+          <div className="relevance-intro">
+            <Eyebrow>{"Quando a psicoterapia pode fazer sentido"}</Eyebrow>
+            <h2 id="relevance-heading" className="type-heading-xl mt-3 max-w-[22ch] text-text-primary">
+              Há momentos em que compreender o que estamos vivendo pode abrir novas formas de seguir.
+            </h2>
+          </div>
+          <div className="relevance-visual">
+            <div className="relevance-image-stage">
+              <Image
+                src="/images/relevance/janyne-atendimento.avif"
+                alt="Janyne Porfirio sentada à mesa durante um momento de atendimento"
+                width={1672}
+                height={941}
+                sizes="(min-width: 1024px) 58vw, 100vw"
+                className="relevance-image-cutout"
+              />
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
 }

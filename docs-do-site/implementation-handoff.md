@@ -274,3 +274,16 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - QA: typecheck passou, lint passou, build passou.
 - Status: PRONTO PARA AVALIACAO VISUAL MANUAL em http://127.0.0.1:3000
 - Proxima etapa: refinamento adicional baseado em feedback visual do usuario.
+
+## Therapy Relevance Photography Integration
+- Master: imagens/atendimento.png — PNG RGBA, 1672 x 941 px, alpha 0-255, 1.318.238 bytes. Preservado sem alteracoes.
+- Derivado web: site/public/images/relevance/janyne-atendimento.avif — 1672 x 941 px, RGBA, 131.071 bytes, qualidade 82.
+- Componente alterado: site/src/components/sections/TherapyRelevance.tsx.
+- Classe substituida: relevance-grid--pending -> relevance-grid--photo.
+- next/image com dimensoes intrinsecas, contain, right-bottom align, sem priority (abaixo da dobra).
+- CSS adicionado: globals.css — relevance-visual, relevance-image-stage (16/9), relevance-image-cutout; grid --photo (texto col 1-5, imagem col 6-12 em >=1024px).
+- Alt: Janyne Porfirio sentada a mesa durante um momento de atendimento.
+- Canvas Muted Linen da seccao aparece atraves das areas transparentes. Sem background, border ou radius no wrapper.
+- Responsividade: <1024px empilha texto-imagem; imagem full-width com aspect-ratio 16/9 e contain.
+- QA: typecheck passou, lint passou. Nenhuma screenshot gerada.
+- Proxima etapa: refinamento atmosferico da secao (aguardando aprovacao visual).
