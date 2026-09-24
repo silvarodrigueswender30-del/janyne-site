@@ -352,3 +352,14 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - Prefers Reduced Motion: respeitado via gsap.matchMedia() (nenhum float ativo).
 - Mobile (<768px): Float GSAP desligado nativamente; layout estatico mantendo a classe de material glass.
 - QA: linter fixado (prefer-const), build executado com sucesso (zero CLS, transform-only motion).
+
+## GSAP Motion Tuning V2
+- Valores antigos: duração longa (~6.5s-7.4s), amplitude baixa (y: ~9-10px totais).
+- Valores finais: flutuação elevada (y: ~13-17px totais) com maior velocidade (duration ~3.8s-4.4s) e rotações estritamente baixas.
+- Easing: mantido sine.inOut e yoyo: true. O movimento ganha naturalidade na redução da duração sem precisar estender a API para keyframes customizados.
+- Amplitudes ajustadas:
+  - Hero Profile: y [-8, 9], x [-1.5, 2], rot [-0.12, 0.18], dur 3.8s, delay 0
+  - Hero Approach: y [-7, 10], x [2, -1], rot [0.15, -0.20], dur 4.4s, delay 0.7
+  - Online Card: y [-6, 7], x [-1, 1], rot [-0.08, 0.10], dur 4.1s, delay 0.3
+- Mobile (<768px): mantém prefers-reduced-motion ou mobile estático (float OFF, glass ON).
+- QA: Build e Lints OK, visual inspecionado com rigor.

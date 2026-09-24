@@ -11,7 +11,7 @@ export function IndividualPsychotherapy() {
       <Container>
         <div className="psychotherapy-grid psychotherapy-grid--photo">
           <div className="psychotherapy-visual">
-            <FloatingMotion className="psychotherapy-floating" duration={7} delay={0.3} y={[-3, 3]} x={[-0.5, 0.5]} rotation={[-0.1, 0.1]}>
+            <FloatingMotion className="psychotherapy-floating" duration={4.1} delay={0.3} y={[-6, 7]} x={[-1, 1]} rotation={[-0.08, 0.10]}>
               <Card variant="floating" className="glass-light h-full w-full">
                 <p className="type-eyebrow text-text-secondary">Atendimento principal</p>
                 <p className="type-heading-sm mt-2 text-text-primary">Online</p>
