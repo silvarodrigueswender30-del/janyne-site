@@ -9,9 +9,11 @@ export function IndividualPsychotherapy() {
     <section id="psicoterapia" className="psychotherapy-section canvas-light section-block section-with-art">
       
       <div className="section-background">
-        <Image src="/images/backgrounds/psychotherapy-background.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
+        <Image src="/images/backgrounds/psychotherapy-background-2.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
       </div>
-      <div className="section-overlay" style={{ background: 'rgba(255,255,255,0.85)' }} />
+      <div className="section-overlay overlay-psychotherapy"
+      />
+      <div className="bg-noise" />
       <Container className="section-content">
         <div className="psychotherapy-grid psychotherapy-grid--photo">
           <div className="psychotherapy-visual">
