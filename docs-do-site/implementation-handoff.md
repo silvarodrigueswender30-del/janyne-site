@@ -296,3 +296,14 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - Mesa agora coincide com a borda inferior da secao em todos os breakpoints.
 - Arquivos: TherapyRelevance.tsx (classe relevance-section), globals.css.
 - QA: typecheck passou, lint passou, commit d5c0b40, deploy ativo em https://janyne-site.vercel.app/
+
+## Individual Psychotherapy Photography Integration
+- Master: imagens/online.png — PNG RGBA, 1122 x 1402 px, alpha 0-255, 641.462 bytes. Preservado intacto.
+- Derivado web: site/public/images/psychotherapy/janyne-online.avif — 1122 x 1402 px, RGBA, 64.127 bytes, qualidade 82.
+- Componente alterado: site/src/components/sections/IndividualPsychotherapy.tsx.
+- Placeholder removido. next/image introduzido na visual column.
+- Card 'Online' flutuante mantido, reordenado no DOM para preceder a imagem no fluxo mobile (evita overlap e obedece regra de semantica).
+- CSS alterado:globals.css. Base rule para psychotherapy atualizada (padding-bottom: 0, anchor alignment idêntico a Relevance).
+- Grid (desktop): align-items: stretch. Visual column (align-self: end). Text column (align-self: center).
+- Mobile layout preservado com Atendimento Online primeiro e Jenny logo abaixo no fluxo natural.
+- QA: typecheck passou, lint passou. Deploy pendente para inspecao manual.

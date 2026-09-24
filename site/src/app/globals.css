@@ -702,10 +702,39 @@ svg {
 .relevance-marker-space { display: block; min-height: var(--space-6); }
 .editorial-marker { display: block; width: var(--space-5); height: 2px; background: var(--accent-primary); }
 .editorial-marker-dark { background: var(--accent-primary); }
+/* ─── Individual Psychotherapy: geometric anchor fix ─────────────────────── */
+.psychotherapy-section {
+  padding-bottom: 0;
+}
+.psychotherapy-grid--photo {
+  align-items: stretch;
+  overflow: hidden;
+}
 .psychotherapy-visual, .psychotherapy-copy { min-width: 0; }
-.psychotherapy-visual { position: relative; }
-.psychotherapy-floating { position: static; margin-top: var(--space-4); }
-.psychotherapy-floating { box-shadow: none; border-color: var(--border-subtle); }
+.psychotherapy-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.psychotherapy-floating { position: static; margin-bottom: var(--space-4); }
+.psychotherapy-floating { box-shadow: none; border-color: var(--border-subtle); z-index: 2; }
+.psychotherapy-image-stage {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  min-height: 0;
+  margin-bottom: 0;
+}
+.psychotherapy-image-cutout {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: left bottom;
+}
 .approach-cards { display: grid; gap: var(--space-4); }
 .process-intro { max-width: 62ch; }
 .process-region { display: grid; gap: var(--space-5); }
@@ -766,8 +795,9 @@ svg {
   .relevance-grid--photo .relevance-intro { grid-column: 1 / span 5; grid-row: 1; align-self: center; }
   .relevance-grid--photo .relevance-visual { grid-column: 6 / -1; grid-row: 1; align-self: end; }
   .relevance-cards { grid-column: 5 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .psychotherapy-visual { grid-column: 1 / span 6; grid-row: 1; }
-  .psychotherapy-copy { grid-column: 7 / -1; grid-row: 1; }
+  /* Photo layout: image col 1–6, text col 7–12 */
+  .psychotherapy-grid--photo .psychotherapy-visual { grid-column: 1 / span 6; grid-row: 1; align-self: end; }
+  .psychotherapy-grid--photo .psychotherapy-copy { grid-column: 7 / -1; grid-row: 1; align-self: center; }
   .psychotherapy-floating { position: absolute; bottom: var(--space-5); left: var(--space-5); width: min(55%, 280px); margin: 0; }
   .approach-intro { grid-column: 1 / span 5; }
   .approach-cards { grid-column: 7 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -855,7 +885,7 @@ svg {
     padding-block: var(--space-7);
   }
   /* Relevance section: photo anchors to bottom, no padding-bottom */
-  .relevance-section { padding-bottom: 0; }
+  .relevance-section, .psychotherapy-section { padding-bottom: 0; }
 }
 
 @media (max-width: 479px) {
@@ -872,7 +902,7 @@ svg {
     padding-block: var(--space-7);
   }
   /* Relevance section: photo anchors to bottom, no padding-bottom */
-  .relevance-section { padding-bottom: 0; }
+  .relevance-section, .psychotherapy-section { padding-bottom: 0; }
 }
 
 /* --- Hero ambient gradient: responsive repositioning ---
