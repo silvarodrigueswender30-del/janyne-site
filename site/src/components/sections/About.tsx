@@ -8,7 +8,12 @@ export function About() {
   const { about } = homeContent;
   return (
     <section id="sobre" className="about-section section-block">
-      <Container>
+      
+      <div className="section-background">
+        <Image src="/images/backgrounds/about-background.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
+      </div>
+      <div className="section-overlay" style={{ background: 'rgba(255,255,255,0.85)' }} />
+      <Container className="section-content">
         <div className="about-grid">
           <div className="about-copy">
             <Eyebrow>{about.eyebrow}</Eyebrow>

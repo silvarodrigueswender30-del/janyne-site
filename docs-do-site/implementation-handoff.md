@@ -383,3 +383,17 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - Tablet Parameters: Calibrados com -15% a -20% de amplitude e pequena redução de delay.
 - Mobile Parameters: Reduzidos substancialmente para prever grande ocupação da tela; Hero cards com duration de 3.8-4.2s; Online card zerado em rotação e reduzido a ~7px de Y travel.
 - QA: Desempenho GPU-bound limpo garantido (apenas transformações aplicadas via fromTo com yoyo, sem triggers de layout). Vercel build preservando estrutura RSC.
+
+## Background Artwork Integration V1
+| Section | Master | Original | AVIF | Size | Component | Object position | Overlay? | Desktop | Mobile |
+|---------|--------|----------|------|------|-----------|-----------------|----------|---------|--------|
+| Hero | `HERO (2).jpeg` | 2752x1536 | `hero-background.avif` | 545.81 KB | `Hero.tsx` | center | Sim (0.4) | ✔ | ✔ |
+| About | `SOBRE.jpeg` | 2752x1536 | `about-background.avif` | 672.17 KB | `About.tsx` | center | Sim (0.85) | ✔ | ✔ |
+| Relevance | `HÁ MOMENTOS.jpeg` | 2752x1536 | `relevance-background.avif` | 314.81 KB | `TherapyRelevance.tsx` | center | Sim (0.6) | ✔ | ✔ |
+| Psychotherapy | `PSICOTERAPIA INDIVIDUAL.jpeg` | 2752x1536 | `psychotherapy-background.avif` | 483.24 KB | `IndividualPsychotherapy.tsx` | center | Sim (0.85) | ✔ | ✔ |
+| Approach | `ABORDAGEM.jpeg` | 2752x1536 | `approach-background.avif` | 483.44 KB | `Approach.tsx` | center | Sim (0.6) | ✔ | ✔ |
+| Process | `COMO FUNCIONA.jpeg` | 2752x1536 | `process-background.avif` | 364.75 KB | `Process.tsx` | center | Sim (0.92) | ✔ | ✔ |
+| FAQ | `FAQ.jpeg` | 2752x1536 | `faq-background.avif` | 468.45 KB | `FrequentlyAskedQuestions.tsx` | center | Sim (0.6) | ✔ | ✔ |
+| Final CTA | `CTA FINAL.jpeg` | 2752x1536 | `contact-background.avif` | 636.13 KB | `FinalCTA.tsx` | center | Sim (0.6) | ✔ | ✔ |
+
+**CSS ART DIRECTION PENDING:** Esta etapa apenas garantiu a inclusão técnica estrutural, o build system AVIF, isolamento `z-index` via stacking contexts e overlays temporários. Refining fotográfico por seção será realizado na próxima rodada.

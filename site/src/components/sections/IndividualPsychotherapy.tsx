@@ -6,8 +6,13 @@ import { FloatingMotion } from "@/components/ui/FloatingMotion";
 
 export function IndividualPsychotherapy() {
   return (
-    <section id="psicoterapia" className="psychotherapy-section canvas-light section-block">
-      <Container>
+    <section id="psicoterapia" className="psychotherapy-section canvas-light section-block section-with-art">
+      
+      <div className="section-background">
+        <Image src="/images/backgrounds/psychotherapy-background.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
+      </div>
+      <div className="section-overlay" style={{ background: 'rgba(255,255,255,0.85)' }} />
+      <Container className="section-content">
         <div className="psychotherapy-grid psychotherapy-grid--photo">
           <div className="psychotherapy-visual">
             <FloatingMotion 

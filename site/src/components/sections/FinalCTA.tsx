@@ -9,8 +9,13 @@ export function FinalCTA() {
   const headingId = "contato-heading";
 
   return (
-    <section id="contato" aria-labelledby={headingId} className="canvas-dark section-block final-cta-section relative overflow-hidden">
-      <Container>
+    <section id="contato" aria-labelledby={headingId} className="canvas-dark section-block final-cta-section relative overflow-hidden section-with-art">
+      
+      <div className="section-background">
+        <Image src="/images/backgrounds/contact-background.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
+      </div>
+      <div className="section-overlay" style={{ background: 'rgba(0,0,0,0.6)' }} />
+      <Container className="section-content">
         <div className="site-grid final-cta-grid items-stretch lg:items-end">
           <div className="final-cta-content">
             {finalCta.eyebrow ? (

@@ -11,7 +11,12 @@ export function FrequentlyAskedQuestions() {
 
   return (
     <section id="faq" aria-labelledby="faq-heading" className="faq-section section-block bg-background-secondary">
-      <Container>
+      
+      <div className="section-background">
+        <Image src="/images/backgrounds/faq-background.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
+      </div>
+      <div className="section-overlay" style={{ background: 'rgba(0,0,0,0.6)' }} />
+      <Container className="section-content">
         <div className="site-grid faq-grid">
           <div className="faq-intro">
             <Eyebrow>{homeContent.faq.eyebrow}</Eyebrow>

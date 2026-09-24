@@ -9,8 +9,13 @@ import { FloatingMotion } from "@/components/ui/FloatingMotion";
 export function Hero() {
   const { hero } = homeContent;
   return (
-    <section id="inicio" className="hero-section canvas-dark">
-      <Container>
+    <section id="inicio" className="hero-section canvas-dark section-with-art">
+      
+      <div className="section-background">
+        <Image src="/images/backgrounds/hero-background.avif" alt="" aria-hidden="true" fill className="object-cover object-center" priority />
+      </div>
+      <div className="section-overlay" style={{ background: 'rgba(0,0,0,0.4)' }} />
+      <Container className="section-content">
         <div className="hero-grid">
           <div className="hero-copy">
             <Eyebrow className="hero-eyebrow">
