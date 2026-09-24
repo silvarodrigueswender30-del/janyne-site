@@ -328,3 +328,27 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - Desktop: Imagem ocupa o espaco ocioso da esquerda, fundo transparente, ancorada na base (padding-bottom: 0 transferido para o accordion).
 - Mobile: Ordem semantica preservada (Eyebrow -> H2 -> Imagem -> Accordion), imagem redimensionada proporcionalmente.
 - QA: build com sucesso, zero overflow reportado.
+
+## GSAP Animation Preparation
+- Repositório oficial: https://github.com/greensock/gsap-skills
+- Comando utilizado: npx skills add https://github.com/greensock/gsap-skills --agent antigravity
+- Diretório da instalação: .agents/skills/ (workspace-scoped)
+- Skills detectadas: gsap-core, gsap-timeline, gsap-scrolltrigger, gsap-plugins, gsap-utils, gsap-react, gsap-performance, gsap-frameworks
+- Status da instalação: concluída com sucesso.
+- Observação: Nenhuma animação implementada ainda. GSAP/dependências ainda não instaladas no /site.
+- Regras futuras de Acessibilidade: prefers-reduced-motion; gsap.matchMedia() obrigatório; cleanup correto no React; zero bloqueio de interação ou prejuízo à leitura.
+- Regras futuras de Performance: priorizar transform e opacity/autoAlpha; timelines organizadas; ScrollTrigger onde fizer sentido; cleanup correto; evitar layout thrashing e animação de propriedades de layout.
+
+## Material + Motion Prototype (GSAP)
+- Packages instalados: gsap e @gsap/react.
+- Componentes alterados: Hero.tsx, IndividualPsychotherapy.tsx.
+- Novo Componente: FloatingMotion.tsx encapsulando a logica GSAP de client-side.
+- Glass Dark (Hero): color-mix(surface-elevated 78%), blur(18px), borda 0.25 alpha, shadow macia com highlight superior.
+- Glass Light (Online): color-mix(surface-elevated 65%), blur(16px), borda dark stone sutil.
+- Animações GSAP: 
+  - Hero Superior: y: [-5, 4], x: [-1, 1], rot: [-0.15, 0.15], dur: 6.5s, del: 0s
+  - Hero Inferior: y: [-4, 6], x: [1, -1], rot: [0.12, -0.18], dur: 7.4s, del: 0.8s
+  - Online Card: y: [-3, 3], x: [-0.5, 0.5], rot: [-0.1, 0.1], dur: 7.0s, del: 0.3s
+- Prefers Reduced Motion: respeitado via gsap.matchMedia() (nenhum float ativo).
+- Mobile (<768px): Float GSAP desligado nativamente; layout estatico mantendo a classe de material glass.
+- QA: linter fixado (prefer-const), build executado com sucesso (zero CLS, transform-only motion).

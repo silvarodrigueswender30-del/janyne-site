@@ -1018,3 +1018,42 @@ svg {
     height: auto;
   }
 }
+
+/* --- Premium Material Glass --- */
+.glass-dark {
+  background: color-mix(in srgb, var(--surface-elevated) 78%, transparent) !important;
+  backdrop-filter: blur(18px) saturate(115%);
+  -webkit-backdrop-filter: blur(18px) saturate(115%);
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow:
+    0 16px 40px rgba(15, 12, 11, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  position: relative;
+}
+.glass-dark::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 25%);
+  pointer-events: none;
+}
+
+.glass-light {
+  background: color-mix(in srgb, var(--surface-elevated) 65%, transparent) !important;
+  backdrop-filter: blur(16px) saturate(110%);
+  -webkit-backdrop-filter: blur(16px) saturate(110%);
+  border: 1px solid rgba(92, 81, 76, 0.15) !important;
+  box-shadow:
+    0 12px 30px rgba(92, 81, 76, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+  position: relative;
+}
+.glass-light::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 25%);
+  pointer-events: none;
+}

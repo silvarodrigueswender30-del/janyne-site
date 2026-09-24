@@ -3,6 +3,7 @@ import { homeContent } from "@/data/site";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { FloatingMotion } from "@/components/ui/FloatingMotion";
 
 export function IndividualPsychotherapy() {
   return (
@@ -10,10 +11,12 @@ export function IndividualPsychotherapy() {
       <Container>
         <div className="psychotherapy-grid psychotherapy-grid--photo">
           <div className="psychotherapy-visual">
-            <Card variant="floating" className="psychotherapy-floating">
-              <p className="type-eyebrow text-text-secondary">Atendimento principal</p>
-              <p className="type-heading-sm mt-2 text-text-primary">Online</p>
-            </Card>
+            <FloatingMotion className="psychotherapy-floating" duration={7} delay={0.3} y={[-3, 3]} x={[-0.5, 0.5]} rotation={[-0.1, 0.1]}>
+              <Card variant="floating" className="glass-light h-full w-full">
+                <p className="type-eyebrow text-text-secondary">Atendimento principal</p>
+                <p className="type-heading-sm mt-2 text-text-primary">Online</p>
+              </Card>
+            </FloatingMotion>
             <div className="psychotherapy-image-stage">
               <Image
                 src="/images/psychotherapy/janyne-online.avif"
