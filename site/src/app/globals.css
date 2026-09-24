@@ -965,7 +965,7 @@ svg {
 @media (max-width: 767px) {
   .psychotherapy-image-stage {
     display: grid;
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
     align-items: stretch;
     gap: var(--space-4);
   }
@@ -975,5 +975,43 @@ svg {
   }
   .psychotherapy-image-cutout {
     align-self: end;
+    justify-self: end;
+  }
+  .psychotherapy-copy {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
+/* --- FAQ Photography Integration --- */
+@media (min-width: 1024px) {
+  .faq-section { padding-bottom: 0; }
+  .faq-grid { align-items: stretch; }
+  .faq-intro { display: flex; flex-direction: column; }
+  .faq-image-stage {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    margin-top: var(--space-5);
+    min-height: 0;
+  }
+  .faq-image-cutout {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: left bottom;
+  }
+  .faq-accordion { padding-bottom: var(--space-10); }
+}
+@media (max-width: 1023px) {
+  .faq-image-stage {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-2);
+  }
+  .faq-image-cutout {
+    width: 85%;
+    max-width: 340px;
+    height: auto;
   }
 }

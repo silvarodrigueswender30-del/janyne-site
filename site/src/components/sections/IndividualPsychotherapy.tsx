@@ -32,8 +32,8 @@ export function IndividualPsychotherapy() {
           </div>
           <div className="psychotherapy-copy">
             <Eyebrow>Psicoterapia individual</Eyebrow>
-            <h2 id="psychotherapy-heading" className="type-heading-xl mt-3 max-w-[18ch] text-text-primary">Um processo construído a partir da sua própria experiência.</h2>
-            <p className="type-body-lg mt-4 max-w-[52ch] text-text-secondary">O acompanhamento acontece principalmente online, em um espaço de escuta e diálogo orientado pela abordagem Fenomenológico-Existencial. O atendimento presencial poderá ocorrer mediante disponibilidade e alinhamento individual.</p>
+            <h2 id="psychotherapy-heading" className="type-heading-xl mt-3 md:max-w-[18ch] text-text-primary">Um processo construído a partir da sua própria experiência.</h2>
+            <p className="type-body-lg mt-4 md:max-w-[52ch] text-text-secondary">O acompanhamento acontece principalmente online, em um espaço de escuta e diálogo orientado pela abordagem Fenomenológico-Existencial. O atendimento presencial poderá ocorrer mediante disponibilidade e alinhamento individual.</p>
             <Card variant="information" className="mt-6">
               <p className="type-heading-sm text-text-primary">Presencial</p>
               <p className="type-body-sm mt-2 text-text-secondary">Mediante disponibilidade e alinhamento individual.</p>

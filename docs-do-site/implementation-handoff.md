@@ -314,3 +314,17 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - Tipografia da note: type-heading-sm foi usada na linha principal para prevenir quebras bruscas em viewports estreitos (390px) e não competir com o H2 principal.
 - Visibilidade: psychotherapy-mobile-note é display:none em >=768px, mantendo o desktop inalterado.
 - Alinhamento: Jenny ancorada à base (align-self: end), note no centro óptico (align-self: center).
+
+### Psychotherapy Mobile Layout Refinement
+- Ajuste de alinhamento da Jenny (justify-self: end) para traze-la proxima do eixo central e do texto.
+- Grid da nota editorial ajustado para proporcao 6fr / 5fr.
+- Conteudo principal abaixo do visual (H2, body, Presencial) agora usa largura util total (width: 100%, sem max-w pre-definido em mobile).
+- Desktop permanece estritamente preservado.
+
+### FAQ Photography Integration
+- Master: faq.png (1086x1448px, RGBA alpha total, 1.1MB).
+- Derivado web: janyne-faq.avif (resolucao e cores originais mantidas, 117KB).
+- Componente: FrequentlyAskedQuestions.tsx. Janyne posicionada na coluna esquerda abaixo do H2.
+- Desktop: Imagem ocupa o espaco ocioso da esquerda, fundo transparente, ancorada na base (padding-bottom: 0 transferido para o accordion).
+- Mobile: Ordem semantica preservada (Eyebrow -> H2 -> Imagem -> Accordion), imagem redimensionada proporcionalmente.
+- QA: build com sucesso, zero overflow reportado.
