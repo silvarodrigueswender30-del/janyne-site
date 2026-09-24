@@ -287,3 +287,12 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - Responsividade: <1024px empilha texto-imagem; imagem full-width com aspect-ratio 16/9 e contain.
 - QA: typecheck passou, lint passou. Nenhuma screenshot gerada.
 - Proxima etapa: refinamento atmosferico da secao (aguardando aprovacao visual).
+
+## Therapy Relevance Geometric Anchor Fix
+- Problema: section-block padding-bottom (96px) + align-items:center criavam espaco vazio abaixo da mesa.
+- Causa raiz confirmada por auditoria de computed styles: section-block, relevance-grid, relevance-image-stage (aspect-ratio fixo).
+- Fix: .relevance-section padding-bottom:0 (top preservado); .relevance-grid--photo align-items:end; .relevance-visual align-self:end; stage sem aspect-ratio fixo com overflow:hidden; cutout height:auto.
+- Overrides de mobile adicionados dentro dos media queries 480-767px e <479px para vencer o padding-block do section-block.
+- Mesa agora coincide com a borda inferior da secao em todos os breakpoints.
+- Arquivos: TherapyRelevance.tsx (classe relevance-section), globals.css.
+- QA: typecheck passou, lint passou, commit d5c0b40, deploy ativo em https://janyne-site.vercel.app/

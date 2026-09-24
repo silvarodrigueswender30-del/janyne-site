@@ -660,16 +660,19 @@ svg {
   padding-bottom: 0;
 }
 
-/* Photo layout: anchor everything to grid bottom */
+/* Photo layout: grid stretches, columns control their own vertical alignment.
+   align-items:stretch (not end) — each child decides independently:
+   - .relevance-intro  → align-self:center (optical balance with Jenny's mass)
+   - .relevance-visual → align-self:end    (mesa flush to section bottom)
+   This prevents both columns from being pulled to the bottom together. */
 .relevance-grid--photo {
-  align-items: end;
+  align-items: stretch;
   overflow: hidden;
 }
 
-/* Visual column: fill downward to the grid baseline */
+/* Visual column: flex container, fills downward within the grid cell */
 .relevance-visual {
   min-width: 0;
-  align-self: end;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -760,8 +763,8 @@ svg {
   .relevance-intro { grid-column: 1 / span 4; }
   .relevance-grid--pending .relevance-intro { grid-column: 1 / span 6; }
   /* Photo layout: text col 1–5, image col 6–12 */
-  .relevance-grid--photo .relevance-intro { grid-column: 1 / span 5; grid-row: 1; }
-  .relevance-grid--photo .relevance-visual { grid-column: 6 / -1; grid-row: 1; }
+  .relevance-grid--photo .relevance-intro { grid-column: 1 / span 5; grid-row: 1; align-self: center; }
+  .relevance-grid--photo .relevance-visual { grid-column: 6 / -1; grid-row: 1; align-self: end; }
   .relevance-cards { grid-column: 5 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .psychotherapy-visual { grid-column: 1 / span 6; grid-row: 1; }
   .psychotherapy-copy { grid-column: 7 / -1; grid-row: 1; }
