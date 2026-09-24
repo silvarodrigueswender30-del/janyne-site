@@ -4,12 +4,14 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export function TherapyRelevance() {
   return (
-    <section className="relevance-section section-block bg-background-secondary" aria-labelledby="relevance-heading">
+    <section className="relevance-section section-block bg-background-secondary section-with-art" aria-labelledby="relevance-heading">
       
       <div className="section-background">
-        <Image src="/images/backgrounds/relevance-background.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
+        <Image src="/images/backgrounds/relevance-background-v2.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
       </div>
-      <div className="section-overlay" style={{ background: 'rgba(0,0,0,0.6)' }} />
+      <div className="section-overlay overlay-relevance"
+      />
+      <div className="bg-noise" />
       <Container className="section-content">
         <div className="relevance-grid relevance-grid--photo">
           <div className="relevance-intro">

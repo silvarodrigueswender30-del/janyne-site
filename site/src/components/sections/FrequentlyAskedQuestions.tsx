@@ -10,12 +10,14 @@ export function FrequentlyAskedQuestions() {
   );
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="faq-section section-block bg-background-secondary">
+    <section id="faq" aria-labelledby="faq-heading" className="faq-section section-block bg-background-secondary section-with-art">
       
       <div className="section-background">
-        <Image src="/images/backgrounds/faq-background.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
+        <Image src="/images/backgrounds/faq-background-v2.avif" alt="" aria-hidden="true" fill className="object-cover object-center" />
       </div>
-      <div className="section-overlay" style={{ background: 'rgba(0,0,0,0.6)' }} />
+      <div className="section-overlay overlay-faq"
+      />
+      <div className="bg-noise" />
       <Container className="section-content">
         <div className="site-grid faq-grid">
           <div className="faq-intro">
