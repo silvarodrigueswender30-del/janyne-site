@@ -639,19 +639,59 @@ svg {
 }
 .relevance-grid, .psychotherapy-grid, .approach-grid { display: grid; gap: var(--space-7); align-items: center; }
 .relevance-cards { display: grid; gap: var(--space-5); }
-/* Therapy Relevance photo layout */
-.relevance-visual { min-width: 0; }
+
+/* ─── Therapy Relevance: geometric anchor fix ───────────────────────────────
+   Problem: section-block padding-bottom (96px) + grid align-items:center
+   create empty space below the mesa. The image appears to float.
+
+   Fix strategy:
+   1. .relevance-section zeroes padding-bottom only (not top) — photo anchors
+      to section edge; text keeps its top breathing room.
+   2. .relevance-grid--photo switches to align-items:end — both columns pull
+      to the bottom of the grid row.
+   3. .relevance-visual fills downward; .relevance-image-stage fills its
+      parent without a fixed aspect-ratio box.
+   4. The image scales naturally within the available width/height. The mesa
+      bottom edge coincides with the section bottom edge.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Section: keep top breathing room, remove bottom gap */
+.relevance-section {
+  padding-bottom: 0;
+}
+
+/* Photo layout: anchor everything to grid bottom */
+.relevance-grid--photo {
+  align-items: end;
+  overflow: hidden;
+}
+
+/* Visual column: fill downward to the grid baseline */
+.relevance-visual {
+  min-width: 0;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Stage: no fixed aspect-ratio — grows with the image natural size.
+   overflow:hidden provides a clean cut at the bottom of the section. */
 .relevance-image-stage {
   display: flex;
   width: 100%;
-  aspect-ratio: 16 / 9;
   align-items: flex-end;
   justify-content: flex-end;
-  overflow: visible;
+  overflow: hidden;
+  min-height: 0;
+  margin-bottom: 0;
 }
+
+/* Cutout: natural width, auto height preserves 16:9 proportion */
 .relevance-image-cutout {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: contain;
   object-position: right bottom;
 }
@@ -811,6 +851,8 @@ svg {
   .section-block {
     padding-block: var(--space-7);
   }
+  /* Relevance section: photo anchors to bottom, no padding-bottom */
+  .relevance-section { padding-bottom: 0; }
 }
 
 @media (max-width: 479px) {
@@ -826,6 +868,8 @@ svg {
   .section-block {
     padding-block: var(--space-7);
   }
+  /* Relevance section: photo anchors to bottom, no padding-bottom */
+  .relevance-section { padding-bottom: 0; }
 }
 
 /* --- Hero ambient gradient: responsive repositioning ---
