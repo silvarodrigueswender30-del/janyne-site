@@ -888,7 +888,7 @@ svg {
     padding-block: var(--space-7);
   }
   /* Relevance section: photo anchors to bottom, no padding-bottom */
-  .relevance-section, .psychotherapy-section { padding-bottom: 0; }
+  .relevance-section { padding-bottom: 0; }
 }
 
 @media (max-width: 479px) {
@@ -905,7 +905,7 @@ svg {
     padding-block: var(--space-7);
   }
   /* Relevance section: photo anchors to bottom, no padding-bottom */
-  .relevance-section, .psychotherapy-section { padding-bottom: 0; }
+  .relevance-section { padding-bottom: 0; }
 }
 
 /* --- Hero ambient gradient: responsive repositioning ---
@@ -963,6 +963,9 @@ svg {
 
 /* --- Psychotherapy mobile editorial note --- */
 @media (max-width: 767px) {
+  .psychotherapy-section {
+    padding-bottom: var(--space-7);
+  }
   .psychotherapy-image-stage {
     display: grid;
     grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
