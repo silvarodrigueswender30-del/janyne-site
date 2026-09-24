@@ -307,3 +307,10 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
 - Grid (desktop): align-items: stretch. Visual column (align-self: end). Text column (align-self: center).
 - Mobile layout preservado com Atendimento Online primeiro e Jenny logo abaixo no fluxo natural.
 - QA: typecheck passou, lint passou. Deploy pendente para inspecao manual.
+
+## Psychotherapy Mobile Editorial Refinement
+- Problema: espaço negativo ao lado da Jenny no mobile. Solução: microcomposição editorial exclusiva (<768px).
+- Arquitetura: psychotherapy-image-stage passou para grid com 2 colunas: minmax(0, 7fr) e minmax(0, 5fr) (proporção ~58/42), com gap var(--space-4).
+- Tipografia da note: type-heading-sm foi usada na linha principal para prevenir quebras bruscas em viewports estreitos (390px) e não competir com o H2 principal.
+- Visibilidade: psychotherapy-mobile-note é display:none em >=768px, mantendo o desktop inalterado.
+- Alinhamento: Jenny ancorada à base (align-self: end), note no centro óptico (align-self: center).

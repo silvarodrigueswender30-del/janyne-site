@@ -23,6 +23,11 @@ export function IndividualPsychotherapy() {
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="psychotherapy-image-cutout"
               />
+              <div className="psychotherapy-mobile-note">
+                <p className="type-eyebrow text-text-secondary">Escuta e diálogo</p>
+                <p className="type-heading-sm mt-2 text-text-primary">A partir da sua experiência.</p>
+                <p className="type-body-sm mt-3 text-text-secondary">Fenomenológico-Existencial</p>
+              </div>
             </div>
           </div>
           <div className="psychotherapy-copy">

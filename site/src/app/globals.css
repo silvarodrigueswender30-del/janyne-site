@@ -735,6 +735,9 @@ svg {
   object-fit: contain;
   object-position: left bottom;
 }
+.psychotherapy-mobile-note {
+  display: none;
+}
 .approach-cards { display: grid; gap: var(--space-4); }
 .process-intro { max-width: 62ch; }
 .process-region { display: grid; gap: var(--space-5); }
@@ -955,5 +958,22 @@ svg {
         transparent 70%
       ),
       var(--background-primary);
+  }
+}
+
+/* --- Psychotherapy mobile editorial note --- */
+@media (max-width: 767px) {
+  .psychotherapy-image-stage {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+  .psychotherapy-mobile-note {
+    display: block;
+    align-self: center;
+  }
+  .psychotherapy-image-cutout {
+    align-self: end;
   }
 }
