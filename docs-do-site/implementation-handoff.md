@@ -363,3 +363,14 @@ Aguardar aprovacao do Checkpoint 5. A Home esta **STRUCTURALLY COMPLETE**; a pro
   - Online Card: y [-6, 7], x [-1, 1], rot [-0.08, 0.10], dur 4.1s, delay 0.3
 - Mobile (<768px): mantém prefers-reduced-motion ou mobile estático (float OFF, glass ON).
 - QA: Build e Lints OK, visual inspecionado com rigor.
+
+## Final CTA Photography Integration
+- Master: imagens/contato.png
+- Resolução: 1122x1402
+- Alpha: Presente (RGBA, transparência total a opacidade total)
+- Caminho AVIF: site/public/images/contact/janyne-contact.avif
+- Filesize AVIF: ~156 KB (Quality 82)
+- Componente alterado: FinalCTA.tsx e globals.css
+- Breakpoint desktop-only: Imagem aparece apenas a partir de min-width: 1024px (lg:block), evitando overhead no mobile e mantendo o CTA original limpo.
+- Posicionamento: O layout usa CSS grid (1-6 para texto, 7-12 para imagem). A seção teve padding-bottom removido e transferido para a coluna de conteúdo, permitindo que a imagem (lign-self: end) encoste com precisão na borda inferior da dark canvas.
+- QA: Testes estruturais de overflow, build e lint garantidos. Nenhuma animação ou novo material glass implementado nesta etapa.
