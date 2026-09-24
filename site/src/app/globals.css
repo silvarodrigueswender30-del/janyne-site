@@ -1111,9 +1111,9 @@ svg {
 
 /* --- ART DIRECTION V5 --- */
 .overlay-hero { background: linear-gradient(to right, rgba(15, 15, 17, 0.88) 0%, rgba(15, 15, 17, 0.4) 50%, rgba(15, 15, 17, 0.15) 100%); }
-.overlay-about { background: linear-gradient(to right, rgba(250, 249, 248, 0.90) 0%, rgba(250, 249, 248, 0.6) 50%, rgba(250, 249, 248, 0.2) 100%); }
+.overlay-about { background: linear-gradient(to left, rgba(250, 249, 248, 0.95) 0%, rgba(250, 249, 248, 0.7) 40%, rgba(250, 249, 248, 0.15) 100%); }
 .overlay-relevance { background: linear-gradient(to right, rgba(15, 15, 17, 0.90) 0%, rgba(15, 15, 17, 0.3) 100%); }
-.overlay-psychotherapy { background: linear-gradient(to left, rgba(250, 249, 248, 0.92) 0%, rgba(250, 249, 248, 0.6) 50%, rgba(250, 249, 248, 0.2) 100%); }
+.overlay-psychotherapy { background: linear-gradient(to left, rgba(250, 249, 248, 0.95) 0%, rgba(250, 249, 248, 0.7) 40%, rgba(250, 249, 248, 0.15) 100%); }
 .overlay-approach { background: linear-gradient(to right, rgba(15, 15, 17, 0.95) 0%, rgba(15, 15, 17, 0.7) 40%, rgba(15, 15, 17, 0.2) 100%), radial-gradient(circle at 75% 50%, rgba(160, 130, 110, 0.2) 0%, transparent 60%); }
 .overlay-process { background: radial-gradient(circle at center 30%, rgba(250, 249, 248, 0.95) 0%, rgba(250, 249, 248, 0.7) 40%, rgba(250, 249, 248, 0.2) 100%); }
 .overlay-faq { background: linear-gradient(to left, rgba(250, 249, 248, 0.92) 0%, rgba(250, 249, 248, 0.5) 60%, rgba(250, 249, 248, 0.1) 100%); }
